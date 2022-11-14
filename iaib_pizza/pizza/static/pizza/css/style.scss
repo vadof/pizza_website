@@ -1,0 +1,22 @@
+@import "_nullstyle.scss";
+@import "_fonts.scss";
+@import "_section1.scss";
+
+// $color2: #db545a;
+
+body {
+    font-family: $fwOS;
+    color: #000;
+}
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    padding: 0px 5px;
+}

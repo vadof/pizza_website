@@ -1,0 +1,218 @@
+/*Nullstyle*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url(../fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: Kalam-Regular;
+  src: url(../fonts/Kalam-Regular.ttf);
+}
+.page_section_1 {
+  padding-top: 20px;
+}
+
+.home {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.home_text {
+  margin-left: 0;
+  max-width: 554px;
+}
+
+.name {
+  font-size: 90px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  margin-left: -5px;
+}
+
+.iaib {
+  color: #db545a;
+}
+
+.name_description {
+  margin-bottom: 60px;
+  font-size: 18px;
+  font-family: OpenSans-Regular;
+  line-height: 200%;
+}
+
+.view_menu_btn {
+  display: flex;
+  color: white;
+  font-size: 18px;
+  font-family: OpenSans-Bold;
+  font-weight: 700;
+  line-height: 200%;
+  height: 54px;
+  background: #db545a;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 233px;
+  transition: all 0.3s ease 0s;
+}
+.view_menu_btn:hover {
+  background: black;
+  color: #db545a;
+}
+
+.home_image img {
+  width: 538px;
+  height: 538px;
+  border-radius: 50%;
+}
+
+.home_pizza_images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.home_pizza_images img {
+  display: flex;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  max-width: 276px;
+  transition: 0.5s;
+}
+.home_pizza_images img:hover {
+  transform: scale(0.9);
+}
+
+@media (max-width: 1092px) {
+  .home_image img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+@media (max-width: 869px) {
+  .name {
+    font-size: 70px;
+  }
+  .name_description {
+    margin-bottom: 30px;
+  }
+  .home_image {
+    display: flex;
+    align-items: center;
+  }
+  .home_image img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+@media (max-width: 562px) {
+  .home {
+    text-align: center;
+  }
+  .home_image {
+    display: none;
+  }
+  .view_menu_btn {
+    margin: 0 auto;
+  }
+}
+body {
+  font-family: OpenSans-Regular;
+  color: #000;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0px 5px;
+}/*# sourceMappingURL=style.css.map */
