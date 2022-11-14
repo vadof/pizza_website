@@ -1,0 +1,107 @@
+.page_section_1 {
+    padding-top: 20px;
+}
+.section1_container {
+}
+.home {
+    display: flex;
+    margin-bottom: 50px;
+}
+.home_text {
+    margin-left: 0;
+    max-width: 554px;
+}
+.name {
+    font-size: 90px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    margin-left: -5px;
+}
+.iaib {
+    color: #db545a;
+}
+.name_description {
+    margin-bottom: 60px;
+    font-size: 18px;
+    font-family: $fwOS;
+    line-height: 200%;
+}
+.view_menu_btn {
+    display: flex;
+    color: white;
+    font-size: 18px;
+    font-family: $fwOSB;
+    font-weight: 700;
+    line-height: 200%;
+    height: 54px;
+    background: #db545a;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 233px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        background: black;
+        color: #db545a;
+    }
+}
+.home_image {
+    img {
+        width: 538px;
+        height: 538px;
+        border-radius: 50%;
+    }
+}
+
+.home_pizza_images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    img {
+        display: flex;
+        margin-bottom: 20px;
+        padding-right: 10px;
+        max-width: 276px;
+        transition: 0.5s;
+        &:hover{
+            transform: scale(0.9);
+        }
+    }
+}
+
+@media (max-width: 1092px) {
+    .home_image {
+        img {
+            max-width: 400px;
+            max-height: 400px;
+        }
+    }
+}
+@media (max-width: 869px) {
+    .name {
+        font-size: 70px;
+    }
+    .name_description {
+        margin-bottom: 30px;
+    }
+    .home_image {
+        display: flex;
+        align-items: center;
+        img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    }
+}
+
+@media (max-width: 562px) {
+    .home {
+        text-align: center;
+    }
+    .home_image {
+        display: none;
+    }
+    .view_menu_btn {
+        margin: 0 auto;
+    }
+}
