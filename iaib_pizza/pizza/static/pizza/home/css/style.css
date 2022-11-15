@@ -76,6 +76,10 @@ h1, h2, h3, h4, h5, h6 {
   src: url(../fonts/OpenSans-Regular.ttf);
 }
 @font-face {
+  font-family: OpenSans-Light;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
   font-family: OpenSans-Bold;
   src: url(../fonts/OpenSans-Bold.ttf);
 }
@@ -196,6 +200,104 @@ h1, h2, h3, h4, h5, h6 {
   }
   .view_menu_btn {
     margin: 0 auto;
+  }
+}
+.page_section_2 {
+  background: #e5e5e5;
+  min-height: 790px;
+}
+
+.section2_container {
+  display: flex;
+}
+
+.pizza_of_the_month {
+  margin-left: 60px;
+  position: absolute;
+  margin-top: 260px;
+  background: white;
+  padding: 30px 40px;
+  width: 385px;
+}
+
+.pizza_of_the_month_title {
+  font-size: 36px;
+  font-family: Roboto-Regular;
+  font-weight: 700;
+  line-height: 110%;
+  margin-bottom: 20px;
+}
+
+.pizza_of_the_month_name {
+  font-size: 30px;
+  font-family: OpenSans-Bold;
+  line-height: 160%;
+}
+
+.pizza_of_the_month_text {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: OpenSans-Light;
+  line-height: 160%;
+}
+
+.pizza_of_the_month_btn {
+  margin-top: 30px;
+  display: flex;
+  color: white;
+  font-size: 18px;
+  font-family: OpenSans-Bold;
+  font-weight: 700;
+  line-height: 200%;
+  height: 54px;
+  background: #db545a;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 233px;
+  transition: all 0.3s ease 0s;
+}
+.pizza_of_the_month_btn:hover {
+  background: black;
+  color: #db545a;
+}
+
+.pizza_of_the_month_image {
+  margin-top: 70px;
+  margin-left: 390px;
+}
+.pizza_of_the_month_image img {
+  max-width: 691px;
+}
+
+@media (max-width: 1092px) {
+  .section2_container {
+    flex-direction: column;
+  }
+  .pizza_of_the_month {
+    position: relative;
+    margin: 30px auto;
+  }
+  .pizza_of_the_month_image {
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 869px) {
+  .pizza_of_the_month_image img {
+    max-width: 385px;
+  }
+}
+@media (max-width: 400px) {
+  .pizza_of_the_month {
+    width: 310px;
+    text-align: center;
+  }
+  .pizza_of_the_month_name {
+    margin-bottom: 15px;
+  }
+  .pizza_of_the_month_image img {
+    max-width: 310px;
   }
 }
 body {

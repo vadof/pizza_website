@@ -5,6 +5,12 @@
 $fwOS: OpenSans-Regular;
 
 @font-face {
+    font-family: OpenSans-Light;
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+$fwOSL: OpenSans-Light;
+
+@font-face {
     font-family: OpenSans-Bold;
     src: url(../fonts/OpenSans-Bold.ttf);
 }
