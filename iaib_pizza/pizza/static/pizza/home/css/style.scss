@@ -2,6 +2,9 @@
 @import "_fonts.scss";
 @import "_section1.scss";
 @import "_section2.scss";
+@import "_section3.scss";
+@import "_section4.scss";
+@import "_section5.scss";
 
 // $color2: #db545a;
 
@@ -20,4 +23,24 @@ body {
     margin: 0 auto;
     box-sizing: content-box;
     padding: 0px 5px;
+}
+
+.button {
+    display: flex;
+    color: white;
+    font-size: 18px;
+    font-family: $fwOSB;
+    font-weight: 700;
+    line-height: 200%;
+    height: 54px;
+    background: #db545a;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 233px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        background: black;
+        color: #db545a;
+    }
 }

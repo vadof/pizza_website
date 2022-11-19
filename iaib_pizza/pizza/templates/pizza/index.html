@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
     <link type="text/css" rel="stylesheet" href="{% static 'pizza/home/css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="wrapper">
@@ -16,8 +17,8 @@
                     <div class="home_text">
                         <div class="name"><span class="iaib">IAIB</span><br>E-PIZZA</div>
                         <div class="name_description">Ullamcorper malesuada proin libero nunc. Id semper risus in hendrerit gravida. Vulputate sapien nec sagittis aliquam malesuada bibendum.</div>
-                        <a href="#" class="view_menu_btn">
-                            <div class="button">VIEW MENU</div>
+                        <a href="#" class="view_menu_btn button">
+                            <div class="button1">VIEW MENU</div>
                         </a>
                     </div>
                     <div class="home_image">
@@ -35,15 +36,109 @@
         <section class="page_section_2">
             <div class="section2_container container">
                 <div class="pizza_of_the_month">
-                    <div class="pizza_of_the_month_title">Pizza Of The Month</div>
+                    <div class="pizza_of_the_month_title">​​Pizza Of The Month</div>
                     <div class="pizza_of_the_month_name">Winter Pizza</div>
                     <div class="pizza_of_the_month_text">When the weather gets colder, give pizza night a comfort food edge with this recipe.</div>
-                    <a href="#" class="pizza_of_the_month_btn">
-                        <div class="button">VIEW MENU</div>
+                    <a href="#" class="pizza_of_the_month_btn button">
+                        <div class="button1">VIEW MENU</div>
                     </a>
                 </div>
                 <div class="pizza_of_the_month_image">
-                    <img src="{% static 'pizza/home/images/month_pizza1.jpg' %}" alt="pizza_of_the_month">
+                    <img src="{% static 'pizza/home/images/month_pizza1.jpeg' %}" alt="pizza_of_the_month">
+                </div>
+            </div>
+        </section>
+        <section class="page_section_3">
+            <div class="section3_container container">
+                <div class="menu_block">
+                    <div class="menu_block_item">
+                        <div class="menu_block_title">
+                            <div class="menu_block_title_number first_menu_number">01</div>
+                            <div class="menu_block_title_name">Pizzas</div>
+                        </div>
+                        <div class="menu_block_title_text"><i>Sample text. Click to select the text box. Click again or double click to start editing the text.</i></div>
+                        <a href="#" class="menu_block_button button">
+                            <div class="button1">MENU</div>
+                        </a>
+                    </div>
+                    <div class="menu_block_item">
+                        <div class="menu_block_title">
+                            <div class="menu_block_title_number">02</div>
+                            <div class="menu_block_title_name">Burgers</div>
+                        </div>
+                        <div class="menu_block_title_text"><i>Sample text. Click to select the text box. Click again or double click to start editing the text.</i></div>
+                        <a href="#" class="menu_block_button button">
+                            <div class="button1">MENU</div>
+                        </a>
+                    </div>
+                    <div class="menu_block_item">
+                        <div class="menu_block_title">
+                            <div class="menu_block_title_number">03</div>
+                            <div class="menu_block_title_name">Drinks</div>
+                        </div>
+                        <div class="menu_block_title_text"><i>Sample text. Click to select the text box. Click again or double click to start editing the text.</i></div>
+                        <a href="#" class="menu_block_button button">
+                            <div class="button1">MENU</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page_section_4">
+            <div class="section4_container container">
+                <div class="delivery_images">
+                    <div class="delivery_main_img">
+                        <img src="{% static 'pizza/home/images/delivery_services.jpg' %}" alt="man with pizza">
+                    </div>
+                    <div class="red_round_with_img red_round"></div>
+                </div>
+                <div class="delivery_block">
+                    <div class="block_red_round"><div class="red_round"></div></div>
+                    <div class="delivery_description">
+                        <div class="description_title">Delivery Services</div>
+                        <div class="delivery_text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+                        <a href="#" class="delivery_button button">
+                            <div class="button1">LEARN MORE</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page_section_5">
+            <div class="section5_container container">
+                <div class="subscribe_red_bg"></div>
+                <div class="subscribe_image">
+                    <img src="{% static 'pizza/home/images/subscribe1.jpg' %}" alt="">
+                </div>
+                <div class="subscribe_block">
+                    <div class="subscribe_block_form">
+                        <div class="subscribe_block_form_title">SUBSCRIBE</div>
+                        <div class="subscribe_block_form_subtitle">to the newsletters and content update</div>
+                        <form class="subscribe_block_form_for_email" method="get">
+                            <div class="for_email_email">Email</div>
+                            <div class="for_email_input">
+                                <input type="text" placeholder="Enter a valid email address" name="email" required>
+                            </div>
+                            <input type="submit" class="submit_btn" value="SUBMIT">
+                        </form>
+                    </div>
+                    <div class="subscribe_block_info">
+                        <div class="subscribe_block_location">
+                            <div class="location_title">LOCATION</div>
+                            <div class="location_street">Ehitajate tee 5</div>
+                            <div class="location_index">12616</div>
+                            <div class="location_town">Tallinn</div>
+                        </div>
+                        <div class="subscribe_block_follow">
+                            <div class="follow_title">FOLLOW US</div>
+                            <div class="follow_social_media">
+                                <div class="facebook"><a target="_blank" href="https://www.facebook.com/ylikool/" class="fa fa-facebook fa-2x"></a></div>
+                                <div class="twitter"><a target="_blank" href="https://twitter.com/tallinntech" class="fa fa-twitter fa-2x"></a></div>
+                                <div class="instagram"><a target="_blank" href="https://www.instagram.com/taltechuniversity/" class="fa fa-instagram fa-2x"></a></div>
+                            </div>
+                            <div class="follow_copy_right">©2022 Privacy policy</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

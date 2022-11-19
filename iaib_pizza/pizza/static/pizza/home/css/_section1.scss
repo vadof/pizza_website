@@ -24,25 +24,7 @@
     font-family: $fwOS;
     line-height: 200%;
 }
-.view_menu_btn {
-    display: flex;
-    color: white;
-    font-size: 18px;
-    font-family: $fwOSB;
-    font-weight: 700;
-    line-height: 200%;
-    height: 54px;
-    background: #db545a;
-    border-radius: 30px;
-    justify-content: center;
-    align-items: center;
-    width: 233px;
-    transition: all 0.3s ease 0s;
-    &:hover {
-        background: black;
-        color: #db545a;
-    }
-}
+
 .home_image {
     img {
         width: 538px;

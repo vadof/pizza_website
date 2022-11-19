@@ -1,0 +1,258 @@
+.page_section_5 {
+    background: url(/img/subscribe_bg.jpg);
+    position: relative;
+    z-index: 0;
+}
+.section5_container {
+    display: flex;
+    color: white;
+}
+
+.subscribe_red_bg {
+    position: absolute;
+    z-index: 2;
+    width: 255px;
+    background-color: #db545a;
+    height: 800px;
+    margin-left: 260px;
+}
+
+.subscribe_image {
+    position: relative;
+    z-index: 2;
+    margin: 40px 0px;
+    img {
+        height: 554px;
+    }
+}
+
+.subscribe_block {
+    margin: 40px 0px 40px -75px;
+}
+.subscribe_block_form {
+    margin-left: 140px;
+    padding-left: 50px;
+    text-align: center;
+    width: 650px;
+}
+.subscribe_block_form_title {
+    margin-top: 30px;
+    margin-left: -100px;
+    margin-bottom: 10px;
+    line-height: 110%;
+    font-family: $fwR;
+    font-size: 36px;
+}
+.subscribe_block_form_subtitle {
+    line-height: 120%;
+    font-family: $fwR;
+    font-size: 18px;
+    margin-left: -100px;
+}
+.subscribe_block_form_for_email {
+    margin-top: 60px;
+    display: flex;
+    margin-bottom: 40px;
+}
+.for_email_email {
+    margin-right: 20px;
+    margin-top: 15px;
+    font-family: $fwOS;
+    font-size: 22px;
+}
+.for_email_input {
+    margin-right: 15px;
+    input {
+        border-bottom: 2px solid white;
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        background: url(/img/subscribe_bg.jpg);
+        color: #b8b4b4;
+    }
+}
+.submit_btn {
+    margin-top: 7px;
+    color: white;
+    font-size: 18px;
+    font-family: $fwOSB;
+    font-weight: 700;
+    line-height: 200%;
+    height: 48px;
+    background: #db545a;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    &:hover {
+        background: white;
+        color: black;
+    }
+}
+.subscribe_block_info {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.subscribe_block_location {
+    width: 315px;
+    text-align: end;
+}
+.location_title {
+    letter-spacing: 5px;
+    margin: 20px 0px;
+    font-family: $fwR;
+    font-size: 30px;
+    line-height: 110%;
+}
+.location_street {
+    font-family: $fwOS;
+    font-size: 22px;
+    line-height: 160%;
+    margin-bottom: 10px;
+}
+.location_index {
+    font-family: $fwOS;
+    font-size: 22px;
+    line-height: 160%;
+    margin-bottom: 10px;
+}
+.location_town {
+    font-family: $fwOS;
+    font-size: 22px;
+    line-height: 160%;
+}
+.subscribe_block_follow {
+    width: 315px;
+    text-align: end;
+}
+.follow_title {
+    letter-spacing: 5px;
+    margin: 20px 0px 25px 0px;
+    font-family: $fwR;
+    font-size: 30px;
+    line-height: 110%;
+}
+.follow_social_media {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 25px;
+}
+.facebook {
+    margin-right: 15px;
+}
+.twitter {
+    margin-right: 15px;
+}
+.fa {
+    padding: 7px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    transition: all 0.3s ease 0s;
+}
+.fa-facebook {
+    &:hover {
+        background: #3b5998;
+        color: white;
+    }
+}
+.fa-twitter {
+    &:hover {
+        background: #1DA1F2;
+        color: white;
+    }
+}
+.fa-instagram {
+    &:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        color: white;
+    }
+}
+.follow_copy_right {
+    font-family: $fwOS;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+
+@media (max-width: 1168px) {
+    .subscribe_image {
+        display: None;
+    }
+    .subscribe_red_bg {
+        display: None;
+    }
+    .subscribe_block {
+        margin: 0 auto;
+    }
+    .subscribe_block_form {
+        margin-left: 0px;
+        padding-left: 50px;
+    }
+    .subscribe_block_info {
+        margin-bottom: 30px;
+        margin-top: 0px;
+    }
+    .subscribe_block_location {
+        max-width: 315px;
+        text-align: center;
+    }
+    .subscribe_block_follow {
+        max-width: 315px;
+        text-align: center;
+    }
+    .follow_social_media {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 647px) {
+    .subscribe_block {
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    .subscribe_block_form {
+        padding: 0;
+        margin: 0 0;
+        max-width: 320px;
+    }
+    .subscribe_block_form_title {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .subscribe_block_form_subtitle {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .subscribe_block_form_for_email {
+        flex-direction: column;
+        margin: 30px 0px 30px 0px;
+    }
+    .for_email_input {
+        margin: 20px 0;
+    }
+    .subscribe_block_location {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .subscribe_block_follow {
+        text-align: center;
+    }
+    .subscribe_block_info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .submit_btn {
+        align-self: center;
+    }
+}
