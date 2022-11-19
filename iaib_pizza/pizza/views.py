@@ -11,3 +11,6 @@ def burger_menu(request):
 
 def drinks_menu(request):
     return render(request, 'pizza/menu/drinks.html')
+
+def nav(request):
+    return render(request, 'pizza/navbar.html')

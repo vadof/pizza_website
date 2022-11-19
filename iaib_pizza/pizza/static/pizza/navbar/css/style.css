@@ -1,0 +1,201 @@
+/*Nullstyle*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Light;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url(../fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: Kalam-Regular;
+  src: url(../fonts/Kalam-Regular.ttf);
+}
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo_item img {
+  width: 100px;
+}
+
+.nav_items {
+  display: flex;
+  align-items: center;
+  font-family: OpenSans-Bold;
+  font-size: 20px;
+  display: flex;
+}
+.nav_items a {
+  padding: 10px;
+  color: black;
+  transition: all 0.3s ease 0s;
+}
+.nav_items a:hover {
+  background: #db545a;
+  color: white;
+}
+
+.home_item {
+  margin-right: 20px;
+}
+
+.menu_item {
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+}
+.menu_item:hover .dropdown-content {
+  display: block;
+}
+.menu_item:hover .menu_item_btn {
+  background-color: None;
+}
+
+.menu_item_btn {
+  padding: 10px;
+  color: black;
+  background: None;
+  font-size: 20px;
+  border: none;
+  transition: all 0.3s ease 0s;
+}
+.menu_item_btn:hover {
+  background: #db545a;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #db545a;
+}
+
+@media (max-width: 375px) {
+  .navbar_container {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav_items {
+    margin-top: 15px;
+  }
+}
+body {
+  font-family: OpenSans-Regular;
+  color: #000;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0px 5px;
+}/*# sourceMappingURL=style.css.map */

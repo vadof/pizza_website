@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="{% static 'pizza/navbar/css/style.css' %}" />
+
+    <title>Title</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar_container container">
+      <div class="logo_item">
+        <img src="{% static 'pizza/navbar/images/logo.jpg' %}" alt="logo">
+      </div>
+      <div class="nav_items">
+        <a href="#" class="home_item">Home</a>
+        <div class="menu_item">
+          <button class="menu_item_btn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Pizza</a>
+            <a href="#">Burgers</a>
+            <a href="#">Drinks</a>
+          </div>
+        </div>
+        <a href="#" class="cart_item">Cart</a>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
