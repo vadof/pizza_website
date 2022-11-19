@@ -7,10 +7,10 @@
 }
 .pizza_of_the_month {
     margin-left: 60px;
-    position: absolute;
+    position: relative;
     margin-top: 260px;
     background: white;
-    padding: 30px 40px;
+    padding: 30px 50px;
     width: 385px;
 }
 .pizza_of_the_month_title {
@@ -33,27 +33,10 @@
 }
 .pizza_of_the_month_btn {
     margin-top: 30px;
-    display: flex;
-    color: white;
-    font-size: 18px;
-    font-family: $fwOSB;
-    font-weight: 700;
-    line-height: 200%;
-    height: 54px;
-    background: #db545a;
-    border-radius: 30px;
-    justify-content: center;
-    align-items: center;
-    width: 233px;
-    transition: all 0.3s ease 0s;
-    &:hover {
-        background: black;
-        color: #db545a;
-    }
 }
 .pizza_of_the_month_image {
     margin-top: 70px;
-    margin-left: 390px;
+    margin-left: -50px;
     img {
         max-width: 691px;
     }
