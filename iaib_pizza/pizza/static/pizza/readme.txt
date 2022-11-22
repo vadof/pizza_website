@@ -1,9 +1,6 @@
-Do in this directory 3 new directories:
-* pizza
-* burger
-* drinks
+Do in menu/images directory 3 new directories:
+* pizza_images
+* burger_images
+* drinks_images
 
-And in each directory create an 'images' directory and upload your images there
-
-
-For example static/pizza/burger/images/'your_image.jpg'
+And in each directory upload your images there
