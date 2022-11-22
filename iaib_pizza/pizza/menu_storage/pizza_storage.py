@@ -22,7 +22,7 @@ class Pizza:
 
 
 winter_pizza = Pizza('Winter Pizza', 8.50, ['Tomate sauce', 'Pepperoni', 'Greenery', 'Pickles'], 'pizza1.jpg')
-pepperoni_pizza = Pizza('Pepperoni Pizza', 6.50, ['Tomate sauce', 'Pepperoni'], 'pizza2.jpg')
+pepperoni_pizza = Pizza('Pepperoni Pizza', 6.50, ['Tomate sauce', 'Pepperoni'], '2.jpg')
 other_pizza = Pizza('Other Pizza', 23.50, ['Tomate sauce', 'Pepperoni', 'Potato'], 'pizza1.jpg')
 
 pizzas = [winter_pizza, pepperoni_pizza, other_pizza]
