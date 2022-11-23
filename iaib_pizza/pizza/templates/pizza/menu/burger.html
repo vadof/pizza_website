@@ -1,11 +1,38 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Burger Menu</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{% static 'pizza/menu/css/style.css' %}" />
+    <title>{{ title }}</title>
 </head>
 <body>
-    {% include "pizza/navbar.html" %}
-    <h1>Burger menu.</h1>
+    <div class="wrapper">
+<!--        {% include "pizza/navbar.html" %}-->
+        <div class="container">
+            <div class="header">{{ title }}</div>
+        </div>
+        <div class="menu">
+            <div class="menu_container container">
+                <div class="menu_content">
+                    {% for b in burgers %}
+                    <div class="menu_item">
+                        <div class="menu_item_img">
+                            <img src="{% static b.get_image_dir %}" alt="pizza">
+                        </div>
+                        <div class="menu_item_title">{{ b.name }}</div>
+                        <div class="menu_item_description"><i>{{ b.show_ingredients }}</i></div>
+                        <div class="menu_item_price">{{ b.price }} €</div>
+                        <a href="#" class="button">
+                            <div id="{{ b.id }}" class="add_to_cart">ADD TO CART</div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
