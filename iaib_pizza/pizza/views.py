@@ -16,3 +16,6 @@ def burger_menu(request):
 
 def drinks_menu(request):
     return render(request, 'pizza/menu/drinks.html', {'drinks': drinks, 'title': 'Drinks menu'})
+
+def cart(request):
+    return render(request, 'pizza/cart.html', {'title': 'Cart'})
