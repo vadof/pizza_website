@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IAIB pizza</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'pizza/home/images/favicon.jpg' %}">
     <link type="text/css" rel="stylesheet" href="{% static 'pizza/home/css/style.css' %}" />
     <link type="text/css" rel="stylesheet" href="{% static 'pizza/navbar/css/style.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,7 +20,7 @@
                     <div class="home_text">
                         <div class="name"><span class="iaib">IAIB</span><br>E-PIZZA</div>
                         <div class="name_description">Ullamcorper malesuada proin libero nunc. Id semper risus in hendrerit gravida. Vulputate sapien nec sagittis aliquam malesuada bibendum.</div>
-                        <a href="#" class="view_menu_btn button">
+                        <a href="{% url 'pizza' %}" class="view_menu_btn button">
                             <div class="button1">VIEW MENU</div>
                         </a>
                     </div>
@@ -99,8 +100,8 @@
                     <div class="delivery_description">
                         <div class="description_title">Delivery Services</div>
                         <div class="delivery_text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-                        <a href="#" class="delivery_button button">
-                            <div class="button1">LEARN MORE</div>
+                        <a href="{% url 'pizza' %}" class="delivery_button button">
+                            <div class="button1">CHOOSE PRODUCTS</div>
                         </a>
                     </div>
                 </div>
