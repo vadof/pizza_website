@@ -1,31 +1,20 @@
-<!DOCTYPE html>
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <link type="text/css" rel="stylesheet" href="{% static 'pizza/navbar/css/style.css' %}" />
-
-    <title>Title</title>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar_container container">
-      <div class="logo_item">
-        <img src="{% static 'pizza/navbar/images/logo.jpg' %}" alt="logo">
-      </div>
-      <div class="nav_items">
-        <a href="{% url 'home' %}" class="home_item">Home</a>
-        <div class="menu_item">
-          <button class="menu_item_btn">Menu</button>
-          <div class="dropdown-content">
-            <a href="{% url 'pizza' %}">Pizza</a>
-            <a href="{% url 'burger' %}">Burgers</a>
-            <a href="{% url 'drinks' %}">Drinks</a>
-          </div>
-        </div>
-        <a href="#" class="cart_item">Cart</a>
-      </div>
+<nav class="navbar">
+  <div class="navbar_container container">
+    <div class="nav_logo_item">
+      <img src="{% static 'pizza/navbar/images/logo.jpg' %}" alt="logo">
     </div>
-  </nav>
-</body>
-</html>
+    <div class="nav_items">
+      <a href="{% url 'home' %}" class="nav_home_item">Home</a>
+      <div class="nav_menu_item">
+        <button class="nav_menu_item_button">Menu</button>
+        <div class="dropdown-content">
+          <a href="{% url 'pizza' %}">Pizza</a>
+          <a href="{% url 'burger' %}">Burgers</a>
+          <a href="{% url 'drinks' %}">Drinks</a>
+        </div>
+      </div>
+      <a href="#" class="nav_cart_item">Cart</a>
+    </div>
+  </div>
+</nav>

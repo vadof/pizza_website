@@ -4,7 +4,6 @@
 body {
     font-family: $fwR;
     color: #000;
-    background: #f2f2f2;
 }
 .wrapper {
     min-height: 100%;
@@ -19,7 +18,7 @@ body {
     padding: 0px 5px;
 }
 
-.button {
+.menu_button {
     display: flex;
     color: white;
     font-size: 18px;
@@ -82,7 +81,7 @@ body {
     font-weight: 700;
     margin: 20px 0px;
 }
-.button {
+.menu_button {
     position: absolute;
     bottom: 0;
 }
@@ -95,7 +94,7 @@ body {
         position: relative;
         bottom: 0;
     }
-    .button {
+    .menu_button{
         position: relative;
     }
     .menu_item {

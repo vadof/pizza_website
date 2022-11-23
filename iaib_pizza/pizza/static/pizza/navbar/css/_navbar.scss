@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
 }
-.logo_item {
+.nav_logo_item {
     img {
         width: 100px;
     }
@@ -24,21 +24,20 @@
     }
     font-family: $fwOSB;
     font-size: 20px;
-    display: flex;
 }
-.home_item {
+.nav_home_item {
     margin-right: 20px;
 }
-.menu_item {
+.nav_menu_item {
     margin-right: 20px;
     position: relative;
     display: inline-block;
     &:hover {
         .dropdown-content {display: block;}
-        .menu_item_btn {background-color: None;}
+        .nav_menu_item_button {background-color: None;}
     }
 }
-.menu_item_btn {
+.nav_menu_item_button {
     padding: 10px;
     color: black;
     background: None;
