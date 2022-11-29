@@ -19,18 +19,20 @@
         <div class="menu">
             <div class="menu_container container">
                 <div class="menu_content">
-                    {% for d in drinks %}
+                    {% for p in menu %}
+                    {% if p.available %}
                     <div class="menu_item">
                         <div class="menu_item_img">
-                            <img src="{% static d.get_image_dir %}" alt="pizza">
+                            <img src="{{ p.image.url }}" alt="pizza">
                         </div>
-                        <div class="menu_item_title">{{ d.name }}</div>
-                        <div class="menu_item_description">{{ d.ml }}</div>
-                        <div class="menu_item_price">{{ d.price }} €</div>
+                        <div class="menu_item_title">{{ p.name }}</div>
+                        <div class="menu_item_description"><i>{{ p.ingredients }}</i></div>
+                        <div class="menu_item_price">{{ p.price }} €</div>
                         <a href="#" class="menu_button">
                             <div id="{{ p.id }}" class="add_to_cart">ADD TO CART</div>
                         </a>
                     </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
