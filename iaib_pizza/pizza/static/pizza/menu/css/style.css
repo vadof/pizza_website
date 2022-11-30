@@ -103,6 +103,7 @@ body {
 }
 
 .menu_button {
+  cursor: pointer;
   display: flex;
   color: white;
   font-size: 18px;
@@ -117,6 +118,7 @@ body {
   transition: all 0.3s ease 0s;
 }
 .menu_button:hover {
+  cursor: pointer;
   background: black;
   color: #db545a;
 }

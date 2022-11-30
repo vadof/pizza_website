@@ -28,14 +28,11 @@
                         <div class="menu_item_title">{{ p.name }}</div>
                         <div class="menu_item_description"><i>{{ p.ingredients }}</i></div>
                         <div class="menu_item_price">{{ p.price }} €</div>
-<!--                        <a href="#" class="menu_button">-->
-                            <form action="{% url 'cart:cart_add' p.id %}" method="post">
-                                {{ cart_product_form }}
-                                {% csrf_token %}
-                                <input type="submit" value="ADD TO CART">
-                            </form>
-<!--                            <div id="{{ p.id }}" class="add_to_cart">ADD TO CART</div>-->
-<!--                        </a>-->
+                        <form action="{% url 'cart:cart_add' p.id %}" method="post">
+                            {{ cart_product_form }}
+                            {% csrf_token %}
+                            <button type="submit" class="menu_button">ADD TO CART</button>
+                        </form>
                     </div>
                     {% endif %}
                     {% endfor %}
