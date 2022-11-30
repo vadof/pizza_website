@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'pizza/home/images/favicon.jpg' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'pizza/cart/css/style.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'pizza/navbar/css/style.css' %}" />
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div class="wrapper">
+        {% include "pizza/navbar.html" %}
+        <div class="cart">
+            <div class="cart_container container">
+                <div class="cart_header">
+                    <div class="cart_header_product">Product</div>
+                    <div class="cart_header_price">Price</div>
+                    <div class="cart_header_quantity">Quantity</div>
+                    <div class="cart_header_subtotal">Subtotal</div>
+                    <div class="cart_header_delete"></div>
+                </div>
+                <div class="cart_items">
+                    {% for item in cart %}
+                        {% with product=item.product %}
+                            <div class="cart_item">
+                                <div class="cart_item_product">
+                                    <img src="{{ product.image.url }}" alt="pizza">
+                                    <div class="cart_item_name">{{ product.name }}</div>
+                                </div>
+                                <div class="cart_item_price">{{ product.price }} €</div>
+                                <div class="cart_item_quantity">
+                                    <input type="text" value="1">
+                                </div>
+                                <div class="cart_item_subtotal">{{ item.price }} €</div>
+                                <a class="cart_item_delete" href="{% url 'cart:cart_remove' product.id %}">&#x2715</a>
+                            </div>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+                <div class="cart_continue_update">
+                    <a class="cart_continue_shopping" href="{% url 'home' %}">
+                        <div class="cart_continue_shopping_text"><i class="cart_continue_shopping_arrow"></i>Continue Shopping</div>
+                    </a>
+                    <div class="cart_update_cart">
+                        <a href="#" class="cart_update_cart_button">
+                            <div>Update Cart</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="cart_total">
+                    <form action="post" class="cart_total_promotion">
+                        <div class="cart_total_promotion_title">Promotion Code</div>
+                        <div class="cart_total_promotion_form">
+                            <input type="text" class="cart_total_promotion_code" placeholder="Coupon Code">
+                            <button class="cart_total_promotion_button" type="submit">Apply Coupon</button>
+                        </div>
+                    </form>
+                    <form action="post" class="cart_total_price">
+                        <div class="cart_total_price_title">Cart Totals</div>
+                        <table class="cart_total_price_table" border="1">
+                            <tr>
+                                <th>Subtotal</th>
+                                <td>{{ cart.get_total_price }} €</td>
+                            </tr>
+                            <tr>
+                                <th>Delivery</th>
+                                <td>2.00 €</td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <th>{{ cart.get_total_price_with_delivery }} €</th>
+                            </tr>
+                        </table>
+                        <div class="cart_total_button">
+                        <button class="cart_total_checkout_button" type="submit">Proceed to Checkout</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,6 +19,7 @@ body {
 }
 
 .menu_button {
+    cursor: pointer;
     display: flex;
     color: white;
     font-size: 18px;
@@ -34,6 +35,7 @@ body {
     &:hover {
         background: black;
         color: #db545a;
+        cursor: pointer;
     }
 }
 

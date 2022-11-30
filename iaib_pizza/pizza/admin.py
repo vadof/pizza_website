@@ -1,19 +1,5 @@
 from django.contrib import admin
-from .models import Pizza, Burger, Drink, Category
-
-
-class Pizza_Burger_Admin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'ingredients', 'available')
-    list_display_links = ('name',)
-    search_fields = ('name',)
-    list_editable = ('available',)
-
-
-class Drink_Admin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'ml', 'available')
-    list_display_links = ('name',)
-    search_fields = ('name',)
-    list_editable = ('available',)
+from .models import Category, Product
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -22,8 +8,13 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('id', 'name')
 
 
-admin.site.register(Pizza, Pizza_Burger_Admin)
-admin.site.register(Burger, Pizza_Burger_Admin)
-admin.site.register(Drink, Drink_Admin)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'price', 'category', 'available')
+    list_display_links = ('name',)
+    search_fields = ('name', 'id')
+    list_editable = ('available',)
+
+
+admin.site.register(Product, ProductAdmin)
 
 admin.site.register(Category, CategoryAdmin)
