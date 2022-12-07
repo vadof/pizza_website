@@ -117,11 +117,12 @@
                     <div class="subscribe_block_form">
                         <div class="subscribe_block_form_title">SUBSCRIBE</div>
                         <div class="subscribe_block_form_subtitle">to the newsletters and content update</div>
-                        <form class="subscribe_block_form_for_email" method="get">
+                        <form class="subscribe_block_form_for_email" method="POST">
                             <div class="for_email_email">Email</div>
                             <div class="for_email_input">
                                 <input type="text" placeholder="Enter a valid email address" name="email" required>
                             </div>
+                            {% csrf_token %}
                             <input type="submit" class="submit_btn" value="SUBMIT">
                         </form>
                     </div>
