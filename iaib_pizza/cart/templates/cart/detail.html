@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="cart_item_price">{{ product.price }} €</div>
                                 <div class="cart_item_quantity">
-                                    <input type="text" value="1">
+                                    <input type="text" value="{{ item.quantity }}">
                                 </div>
                                 <div class="cart_item_subtotal">{{ item.price }} €</div>
                                 <a class="cart_item_delete" href="{% url 'cart:cart_remove' product.id %}">&#x2715</a>
