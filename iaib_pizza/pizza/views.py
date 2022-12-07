@@ -1,11 +1,27 @@
+import smtplib
+from email.mime.text import MIMEText
+
 from django.shortcuts import render, get_object_or_404
 
 from .models import Product, Category
 from cart.forms import CartAddProductForm
 
+from .forms import UserForm
+
 
 def index(request):
-    return render(request, 'pizza/index.html')
+    submitbutton = request.POST.get("submit")
+
+    email = ''
+
+    form = UserForm(request.POST or None)
+    if form.is_valid():
+        email = form.cleaned_data.get("email")
+        send_email(str(email))
+
+    context = {'form': form, 'submitbutton': submitbutton, 'email': email}
+
+    return render(request, 'pizza/index.html', context)
 
 def pizza_menu(request):
     menu = [product for product in Product.objects.all() if product.category_id == 1]
@@ -37,3 +53,19 @@ def product_detail(request, id):
     product = get_object_or_404(Product, id=id, available=True)
     cart_product_form = CartAddProductForm()
     return render(request, 'iaib_pizza/cart/detail.html', {'product': product, 'cart_product_form': cart_product_form})
+
+
+def send_email(user_email):
+    sender = 'iaib.pizza@gmail.com'
+    password = 'fvociwuqyefbmulb'
+
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+
+    try:
+        server.login(sender, password)
+        msg = MIMEText('Thank you for subscribing to the newsletter!')
+        msg['Subject'] = 'PIZZA'
+        server.sendmail(sender, user_email, msg.as_string())
+    except Exception:
+        print('Incorrect email')
