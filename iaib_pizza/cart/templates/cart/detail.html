@@ -63,27 +63,35 @@
                     </div>
                 </div>
                 <div class="cart_total">
-                    <form action="post" class="cart_total_promotion">
+                    <form action="{% url 'coupons:apply' %}" method="POST" class="cart_total_promotion">
                         <div class="cart_total_promotion_title">Promotion Code</div>
                         <div class="cart_total_promotion_form">
-                            <input type="text" class="cart_total_promotion_code" placeholder="Coupon Code">
+                            {{ coupon_apply_form }}
+<!--                            <input name="coupon" type="text" class="cart_total_promotion_code" placeholder="Coupon Code">-->
+                            {% csrf_token %}
                             <button class="cart_total_promotion_button" type="submit">Apply Coupon</button>
                         </div>
                     </form>
-                    <form action="post" class="cart_total_price">
+                    <form method="POST" class="cart_total_price">
                         <div class="cart_total_price_title">Cart Totals</div>
                         <table class="cart_total_price_table" border="1">
                             <tr>
                                 <th>Subtotal</th>
                                 <td>{{ cart.get_total_price }} €</td>
                             </tr>
+                            {% if cart.coupon %}
+                            <tr>
+                                <th>Discount</th>
+                                <td>{{ cart.coupon.discount }} %</td>
+                            </tr>
+                            {% endif %}
                             <tr>
                                 <th>Delivery</th>
                                 <td>2.00 €</td>
                             </tr>
                             <tr>
                                 <th>Total</th>
-                                <th>{{ cart.get_total_price_with_delivery }} €</th>
+                                <th>{{ cart.get_total_price_after_discount }} €</th>
                             </tr>
                         </table>
                         <div class="cart_total_button">

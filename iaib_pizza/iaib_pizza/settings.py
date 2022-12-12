@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pizza.apps.PizzaConfig',
     'cart.apps.CartConfig',
+    'coupons.apps.CouponsConfig',
 ]
 
 MIDDLEWARE = [
