@@ -119,8 +119,12 @@ body {
   font-size: 20px;
   line-height: 110%;
 }
+.cart label {
+  display: none;
+}
 .cart img {
-  height: 130px;
+  height: 140px;
+  width: 140px;
 }
 
 .cart_header {

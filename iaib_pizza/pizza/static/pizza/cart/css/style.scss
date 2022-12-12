@@ -21,8 +21,12 @@ body {
     padding: 0px 5px;
 }
 .cart {
+    label {
+        display: none;
+    }
     img {
-        height: 130px;
+        height: 140px;
+        width: 140px;
     }
     margin-top: 50px;
     font-family: $fwR;
