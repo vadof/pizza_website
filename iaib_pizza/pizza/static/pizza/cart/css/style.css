@@ -482,7 +482,7 @@ body {
     width: 20%;
   }
   .cart_header_delete {
-    display: hidden;
+    display: none;
   }
   .cart_item_product {
     width: 20%;
