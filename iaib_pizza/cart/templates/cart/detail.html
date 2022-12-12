@@ -34,9 +34,19 @@
                                 </div>
                                 <div class="cart_item_price">{{ product.price }} €</div>
                                 <div class="cart_item_quantity">
-                                    <input type="text" value="{{ item.quantity }}">
+                                    <form action="{% url 'cart:cart_minus' product.id %}" method="POST" class="minus_count">
+                                        <button type="submit">-</button>
+                                        {{ cart_product_form }}
+                                        {% csrf_token %}
+                                    </form>
+                                    <div class="cart_item_quantity_number">{{ item.quantity }}</div>
+                                    <form action="{% url 'cart:cart_add' product.id %}" method="POST" class="plus_count">
+                                        {{ cart_product_form }}
+                                        {% csrf_token %}
+                                        <button type="submit">+</button>
+                                    </form>
                                 </div>
-                                <div class="cart_item_subtotal">{{ item.price }} €</div>
+                                <div class="cart_item_subtotal">{{ item.total_price }} €</div>
                                 <a class="cart_item_delete" href="{% url 'cart:cart_remove' product.id %}">&#x2715</a>
                             </div>
                         {% endwith %}

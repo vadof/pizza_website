@@ -87,11 +87,31 @@ body {
     width: 10%;
 }
 .cart_item_quantity {
+    display: flex;
     width: 10%;
-    input {
-        width: 30px;
-        font-size: 18px;
+    button {
+        border: None;
+        align-self: center;
+        color: black;
+        width: 25px;
+        height: 25px;
+        background: #db545a;
+        font-weight: 700;
+        &:hover {
+            border: 2px solid black;
+            background: #db545a;
+        }
     }
+}
+.minus_count {
+    margin-right: 10px;
+}
+.cart_item_quantity_number {
+    font-size: 25px;
+    margin-top: 2px;
+}
+.plus_count {
+    margin-left: 10px;
 }
 .cart_item_subtotal {
     width: 10%;
