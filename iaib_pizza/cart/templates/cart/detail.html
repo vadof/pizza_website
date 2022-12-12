@@ -34,8 +34,10 @@
                                 </div>
                                 <div class="cart_item_price">{{ product.price }} €</div>
                                 <div class="cart_item_quantity">
-                                    <form action="" method="POST" class="minus_count">
+                                    <form action="{% url 'cart:cart_minus' product.id %}" method="POST" class="minus_count">
                                         <button type="submit">-</button>
+                                        {{ cart_product_form }}
+                                        {% csrf_token %}
                                     </form>
                                     <div class="cart_item_quantity_number">{{ item.quantity }}</div>
                                     <form action="{% url 'cart:cart_add' product.id %}" method="POST" class="plus_count">
