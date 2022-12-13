@@ -41,3 +41,8 @@ def cart_detail(request):
         item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 'update': True})
     coupon_apply_form = CouponApplyFrom()
     return render(request, 'cart/detail.html', {'cart': cart, 'coupon_apply_form': coupon_apply_form})
+
+
+def checkout(request):
+    cart = Cart(request)
+    return render(request, 'cart/checkout.html', {'cart': cart})
