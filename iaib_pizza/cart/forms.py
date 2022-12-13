@@ -15,6 +15,7 @@ class CheckoutForm(forms.Form):
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control"}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={"class":"form-control", "placeholder":"youremail@example.com"}))
     address = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ehitajate tee 5-21"}))
+    phone_number = forms.CharField(max_length=20, widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"37254937933"}))
     city = forms.NullBooleanField(widget=forms.NullBooleanSelect(attrs={"class":"custom-select d-block w-100"}))
     zip = forms.CharField(max_length=5, widget=forms.TextInput(attrs={"class":"form-control"}))
     radio_choices = (

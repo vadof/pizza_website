@@ -50,6 +50,6 @@ def checkout(request):
         cd = checkout_form.cleaned_data
         print(cd)
         print(cart.cart)
-        print(cart.discount)
+        # remove + from phone number
     # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
     return render(request, 'cart/checkout.html', {'cart': cart, 'checkout_form': checkout_form})
