@@ -14,4 +14,5 @@ urlpatterns = [
     path('minus/<int:product_id>/',
          views.cart_minus,
          name='cart_minus'),
+    path('checkout/', views.checkout, name='order'),
 ]

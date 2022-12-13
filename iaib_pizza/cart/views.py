@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from pizza.models import Product
 from .cart import Cart
-from .forms import CartAddProductForm, CartMinusProductForm
+from .forms import CartAddProductForm, CartMinusProductForm, CheckoutForm
 from coupons.forms import CouponApplyFrom
 
 
@@ -41,3 +41,15 @@ def cart_detail(request):
         item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 'update': True})
     coupon_apply_form = CouponApplyFrom()
     return render(request, 'cart/detail.html', {'cart': cart, 'coupon_apply_form': coupon_apply_form})
+
+
+def checkout(request):
+    cart = Cart(request)
+    checkout_form = CheckoutForm(request.POST or None)
+    if checkout_form.is_valid():
+        cd = checkout_form.cleaned_data
+        print(cd)
+        print(cart.cart)
+        # remove + from phone number
+    # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
+    return render(request, 'cart/checkout.html', {'cart': cart, 'checkout_form': checkout_form})

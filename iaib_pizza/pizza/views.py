@@ -68,3 +68,6 @@ def send_email(user_email):
         server.sendmail(sender, user_email, msg.as_string())
     except Exception:
         print('Incorrect email')
+
+def checkout(request):
+    return render(request, 'cart/checkout.html', {'cart': cart})
