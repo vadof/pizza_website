@@ -11,14 +11,18 @@ class CartMinusProductForm(forms.Form):
 
 
 class CheckoutForm(forms.Form):
-    first_name = forms.CharField(max_length=50)
-    last_name = forms.CharField(max_length=50)
-    email = forms.EmailField()
-    address = forms.CharField(max_length=50)
-    city = forms.NullBooleanField()
-    zip = forms.IntegerField()
-    delivery_method = forms.BooleanField()
-    card_name = forms.CharField(max_length=100)
-    card_number = forms.IntegerField()
-    expiration = forms.CharField(max_length=100)
-    cvv = forms.IntegerField()
+    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control"}))
+    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control"}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"class":"form-control", "placeholder":"youremail@example.com"}))
+    address = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ehitajate tee 5-21"}))
+    city = forms.NullBooleanField(widget=forms.NullBooleanSelect(attrs={"class":"custom-select d-block w-100"}))
+    zip = forms.CharField(max_length=5, widget=forms.TextInput(attrs={"class":"form-control"}))
+    radio_choices = (
+        ("pick_up", 'Pick up on the spot'),
+        ("home", 'Delivery to home'),
+    )
+    delivery_method = forms.ChoiceField(widget=forms.RadioSelect(attrs={"class":"custom-radio"}), choices=radio_choices)
+    card_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control"}))
+    card_number = forms.CharField(max_length=20, widget=forms.TextInput(attrs={"class":"form-control"}))
+    expiration = forms.CharField(max_length=5, widget=forms.TextInput(attrs={"class":"form-control"}))
+    cvv = forms.CharField(max_length=4, widget=forms.TextInput(attrs={"class":"form-control"}))
