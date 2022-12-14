@@ -74,8 +74,8 @@
                     </div>
                   </div>
                   <hr>
-                  <div class="d-block my-3 radio_choice">
-                    {{ checkout_form.delivery_method }}
+<!--                  <div class="d-block my-3 radio_choice">-->
+<!--                    {{ checkout_form.delivery_method }}-->
 <!--                    <div class="custom-control custom-radio ">-->
 <!--                      <input id="onspot" name="deliveryMethod" type="radio" class="custom-control-input" checked required>-->
 <!--                      <label class="custom-control-label" for="onspot">Pick up on the spot</label>-->
@@ -84,7 +84,7 @@
 <!--                      <input id="home" name="deliveryMethod" type="radio" class="custom-control-input" required>-->
 <!--                      <label class="custom-control-label" for="home">Delivery to home</label>-->
 <!--                    </div>-->
-                  </div>
+<!--                  </div>-->
                   <div class="row">
                     <div class="col-md-6 mb-3">
                       <label for="cc-name">Name on card</label>
@@ -162,12 +162,14 @@
                     </div>
                     <span class="text-muted">2.00 €</span>
                 </li>
+                {% if cart.coupon %}
                 <li class="list-group-item d-flex justify-content-between bg-light">
                   <div class="text-success">
                     <h6 class="my-0">Promo code</h6>
                   </div>
                   <span class="text-success">{{ cart.coupon.discount }} %</span>
                 </li>
+                {% endif %}
                 <li class="list-group-item d-flex justify-content-between">
                   <h5 class="my-0">Total</h5>
                   <strong>{{ cart.get_total_price_after_discount }} €</strong>
