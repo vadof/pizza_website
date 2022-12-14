@@ -83,5 +83,6 @@ class Cart(object):
         return self.get_total_price_after_discount() + 2
 
     def clear(self):
+        self.coupon_id = 1000
         del self.session[settings.CART_SESSION_ID]
         self.save()

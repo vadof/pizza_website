@@ -57,16 +57,18 @@ def checkout(request):
         discount = cart.coupon.discount if cart.coupon else None
         order_number = random.randint(0, 999)
 
-        send_message_about_order(cd, cart, order_number)
+        send_message_about_order_to_user(cd, cart, order_number)
+        send_message_about_order_to_admin(cd, cart, order_number)
         fill_order_info(cd, cart, discount)
         fill_sales(cart, discount)
-
         cart.clear()
+
+        return render(request, 'cart/thanks.html', {'order_number': order_number})
 
     return render(request, 'cart/checkout.html', {'cart': cart, 'checkout_form': checkout_form})
 
 
-def send_message_about_order(cd, cart, order_number):
+def send_message_about_order_to_user(cd, cart, order_number):
     date = datetime.datetime.now()
     now = date.strftime("%Y/%m/%d %H:%M")
     order_time_home = date + datetime.timedelta(minutes=50)
@@ -74,9 +76,27 @@ def send_message_about_order(cd, cart, order_number):
     message = f'Dear {cd["first_name"]},\nThank you for your order!\n\n'
     message += f'Date:  {now}\n\n'
     message += f'Estimated Delivery Time: {order_time_home}\n\n'
-    message += f'Order number:  {order_number}.\n\n'
-    message += f'Order price:  {cart.get_total_price_after_discount()} €.'
+    message += f'Order number:  {order_number}\n\n'
+    message += f'Order price:  {cart.get_total_price_after_discount()} €'
     send_email(cd['email'], message)
+
+
+def send_message_about_order_to_admin(cd, cart, order_number):
+    dishes = ", ".join(list(cart.cart.keys()))
+    address = 'Tallinn' if cd['city'] else None
+    date = datetime.datetime.now()
+    now = date.strftime("%Y/%m/%d %H:%M")
+    order_time_home = date + datetime.timedelta(minutes=50)
+    order_time_home = order_time_home.strftime("%H:%M")
+    message = f'Order time:  {now}\n\n'
+    message += f'Order number:  {order_number}\n\n'
+    message += f'Dishes: {dishes}\n\n'
+    message += f'Name: {cd["first_name"]} {cd["last_name"]}\n\n'
+    message += f'Phone number: {cd["phone_number"]}\n\n'
+    message += f'Address: {cd["address"]}\n\n'
+    message += f'City: {address}\n\n'
+    message += f'Zip: {cd["zip"]}\n\n'
+    send_email('iaib.pizza@gmail.com', message)
 
 
 def fill_order_info(cd, cart, discount):
