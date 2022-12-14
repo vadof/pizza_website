@@ -1,9 +1,15 @@
+import datetime
+import random
+
+from django.db.models import F
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from pizza.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm, CartMinusProductForm, CheckoutForm
 from coupons.forms import CouponApplyFrom
+from pizza.views import send_email
+from .models import Sales, SalesWithoutDiscount, DiscountSales, OrderInfo
 
 
 @require_POST
@@ -48,8 +54,73 @@ def checkout(request):
     checkout_form = CheckoutForm(request.POST or None)
     if checkout_form.is_valid():
         cd = checkout_form.cleaned_data
-        print(cd)
-        print(cart.cart)
-        # remove + from phone number
-    # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
+        discount = cart.coupon.discount if cart.coupon else None
+        order_number = random.randint(0, 999)
+
+        send_message_about_order_to_user(cd, cart, order_number)
+        send_message_about_order_to_admin(cd, cart, order_number)
+        fill_order_info(cd, cart, discount)
+        fill_sales(cart, discount)
+        cart.clear()
+
+        return render(request, 'cart/thanks.html', {'order_number': order_number})
+
     return render(request, 'cart/checkout.html', {'cart': cart, 'checkout_form': checkout_form})
+
+
+def send_message_about_order_to_user(cd, cart, order_number):
+    date = datetime.datetime.now()
+    now = date.strftime("%Y/%m/%d %H:%M")
+    order_time_home = date + datetime.timedelta(minutes=50)
+    order_time_home = order_time_home.strftime("%H:%M")
+    message = f'Dear {cd["first_name"]},\nThank you for your order!\n\n'
+    message += f'Date:  {now}\n\n'
+    message += f'Estimated Delivery Time: {order_time_home}\n\n'
+    message += f'Order number:  {order_number}\n\n'
+    message += f'Order price:  {cart.get_total_price_after_discount()} €'
+    send_email(cd['email'], message)
+
+
+def send_message_about_order_to_admin(cd, cart, order_number):
+    dishes = ", ".join(list(cart.cart.keys()))
+    address = 'Tallinn' if cd['city'] else None
+    date = datetime.datetime.now()
+    now = date.strftime("%Y/%m/%d %H:%M")
+    order_time_home = date + datetime.timedelta(minutes=50)
+    order_time_home = order_time_home.strftime("%H:%M")
+    message = f'Order time:  {now}\n\n'
+    message += f'Order number:  {order_number}\n\n'
+    message += f'Dishes: {dishes}\n\n'
+    message += f'Name: {cd["first_name"]} {cd["last_name"]}\n\n'
+    message += f'Phone number: {cd["phone_number"]}\n\n'
+    message += f'Address: {cd["address"]}\n\n'
+    message += f'City: {address}\n\n'
+    message += f'Zip: {cd["zip"]}\n\n'
+    send_email('iaib.pizza@gmail.com', message)
+
+
+def fill_order_info(cd, cart, discount):
+    city = 'Tallinn' if cd['city'] is True else None
+    amount = [str(q['quantity']) for q in list(cart.cart.values())]
+    phone_number = cd['phone_number'].replace('+', '')
+
+    order_info = OrderInfo(name=f'{cd["first_name"]} {cd["last_name"]}', email=cd['email'],
+                           city=city, zip=cd['zip'], phone_number=phone_number,
+                           discount=discount, products=", ".join(list(cart.cart.keys())), amount=", ".join(amount))
+
+    order_info.save()
+
+
+def fill_sales(cart, discount):
+    for id, q in cart.cart.items():
+        item = Sales.objects.filter(product_id=int(id))
+        item.update(sold = F('sold') + q['quantity'])
+        item.update(income = F('income') + (q['quantity'] * float(q['price'])))
+        if discount:
+            item = DiscountSales.objects.filter(product_id=int(id), discount=int(discount))
+            item.update(sold=F('sold') + q['quantity'])
+            item.update(income=F('income') + (q['quantity'] * float(q['price']) * int(discount)))
+        else:
+            item = SalesWithoutDiscount.objects.filter(product_id=int(id))
+            item.update(sold=F('sold') + q['quantity'])
+            item.update(income=F('income') + (q['quantity'] * float(q['price'])))

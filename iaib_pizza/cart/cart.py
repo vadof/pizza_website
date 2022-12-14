@@ -11,7 +11,6 @@ class Cart(object):
         if not cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
-        self.coupons = ['OPEN10', 'NICE20', 'TdfspUFDSO']
         self.coupon_id = self.session.get('coupon_id')
 
     def __iter__(self):
@@ -62,12 +61,6 @@ class Cart(object):
             del self.cart[product_id]
             self.save()
 
-    def apply_discount(self, coupon):
-        if coupon in self.coupons:
-            self.discount = True
-            self.coupons.remove(coupon)
-            self.save()
-
     def get_total_price(self):
         total = sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
         return total
@@ -84,11 +77,12 @@ class Cart(object):
         return Decimal('0')
 
     def get_total_price_after_discount(self):
-        return self.get_total_price() - self.get_discount()
+        return self.get_total_price() - self.get_discount() + 2
 
     def get_total_price_with_delivery(self):
         return self.get_total_price_after_discount() + 2
 
     def clear(self):
+        self.coupon_id = 1000
         del self.session[settings.CART_SESSION_ID]
         self.save()

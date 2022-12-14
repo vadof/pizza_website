@@ -16,7 +16,7 @@ def index(request):
     form = UserForm(request.POST or None)
     if form.is_valid():
         email = form.cleaned_data.get("email")
-        send_email(str(email))
+        send_email(str(email), 'Thank you for subscribing to the newsletter!')
 
     context = {'form': form, 'submitbutton': submitbutton, 'email': email}
 
@@ -54,7 +54,7 @@ def product_detail(request, id):
     return render(request, 'iaib_pizza/cart/detail.html', {'product': product, 'cart_product_form': cart_product_form})
 
 
-def send_email(user_email):
+def send_email(user_email, message):
     sender = 'iaib.pizza@gmail.com'
     password = 'fvociwuqyefbmulb'
 
@@ -63,8 +63,8 @@ def send_email(user_email):
 
     try:
         server.login(sender, password)
-        msg = MIMEText('Thank you for subscribing to the newsletter!')
-        msg['Subject'] = 'PIZZA'
+        msg = MIMEText(message)
+        msg['Subject'] = 'IAIB_PIZZA'
         server.sendmail(sender, user_email, msg.as_string())
     except Exception:
         print('Incorrect email')

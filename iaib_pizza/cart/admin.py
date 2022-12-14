@@ -20,8 +20,8 @@ class SalesWithoutDiscountAdmin(admin.ModelAdmin):
 
 
 class OrderInfoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'city', 'zip', 'phone_number', 'discount', 'products', 'delivery', 'time', 'date')
-    search_fields = ('name', 'city', 'zip', 'phone_number', 'discount', 'products', 'delivery')
+    list_display = ('id', 'name', 'email', 'city', 'zip', 'phone_number', 'discount', 'products', 'amount', 'time', 'date')
+    search_fields = ('name', 'city', 'zip', 'phone_number', 'discount', 'products')
 
 
 admin.site.register(Sales, SalesAdmin)

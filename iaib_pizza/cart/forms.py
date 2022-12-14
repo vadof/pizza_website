@@ -22,7 +22,6 @@ class CheckoutForm(forms.Form):
         ("pick_up", 'Pick up on the spot'),
         ("home", 'Delivery to home'),
     )
-    delivery_method = forms.ChoiceField(widget=forms.RadioSelect(attrs={"class":"custom-radio"}), choices=radio_choices)
     card_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control"}))
     card_number = forms.CharField(max_length=20, widget=forms.TextInput(attrs={"class":"form-control"}))
     expiration = forms.CharField(max_length=5, widget=forms.TextInput(attrs={"class":"form-control"}))
