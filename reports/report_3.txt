@@ -1,0 +1,9 @@
+ISSUED:
+Make page if cart is empty - VADIM
+Make admin panel - VADIM
+Make database - VADIM
+Make cart - VADIM
+
+Сonclusions:
+Created a shopping cart where you can add products.
+An admin panel has been made where you can add products and manipulate them (all products are in db).

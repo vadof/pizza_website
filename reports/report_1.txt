@@ -1,0 +1,24 @@
+Retro: Sprint 1 & Planning: Sprint 2
+
+Osalejad: Vadim, Aet, Triinu
+Kuupäev: 17/nov/2022
+Aeg: 14 - 15:30
+
+Mis töötas:
+Töötas see, et alustasime kõik koos tegutsemist ja hoidsime omavahelist suhtlust üldiselt aktiivsena (aktiivsemana kui varem, see andis hoogu juurde).
+Alustasime üldise sprintide planeerimisega ja see aitas paremini asju kõigi jaoks läbi mõelda, kuigi eriti kerge ei ole siiski koormust hinnata.
+Meil on üks tubli tiimiliige, kes oskab meid juhendada ja õpetada. See on väga positiivne.
+Algus on tehtud nii HTMLi kui ka Djangoga.
+
+Mida paremini teha:
+Kõikide issue´de planeerimine võttis omajagu energiat ja päris raske oli ette näha kogu projekti ulatuses tegevusi, mida oleks vaja teha. Seetõttu on sprindi raames planeerimine mõistlik ning samas piiratud aja kontekstis ka risk, et töö projekti lõpus kuhjub. Üritame seda edaspidi silmas pidada.
+Olime algse planeerimisega suhteliselt optimistlikud. Teises sprindis doseerime ülesandeid paremini.
+Gitlabi tundmaõppimine oli oodatust keerukam ja palju ajakulukam.
+Ülesannete jaotuse osas otsustasime, et issue´sid loome ühise äranägemise alusel, mida vaja teha on (mitte igaüks eraldi) ja arenduste approvimine on ühe meeskonnaliikme ülesanne, et garanteerida töö kvaliteeti.
+
+
+Sprint 1 ajakulu:
+Vadim - planeerimine (issues), seadistused (gitlab, bycharm), arendus, tehniline eestvedamine, koosolek - 20h
+Aet - planeerimine (issues), seadistused, õppimine (django, html), koosolek - 7h
+Triinu - planeerimine (issues), seadistused, õppimine (django-html), koosolek - 7 h
+

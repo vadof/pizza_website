@@ -1,0 +1,27 @@
+ISSUED:
+Make functionaliry for email button (home page) - VADIM
+Generate coupons in cart.py file - VADIM
+Make functionality for proceed to checkout button - VADIM
+Make functionality for the coupon - VADIM
+Create update counts buttons in cart - VADIM
+Make a page after purchase - VADIM
+Make a checkout page - VADIM
+Make functionality for all buttons - VADIM
+Create a database of purchases and customers - VADIM
+Make a bot that sends order data (to customer and to admin) - VADIM
+Make a coupon system - VADIM
+Make it possible to change the number of products in the cart and delete the product - VADIM
+Make functionality for discounts on all pages - VADIM
+When ordering, fill in all tables in db (4 tables) - VADIM
+
+
+Сonclusions:
+Completely ready site with a good database for future order analysis.
+Some bugs:
+1.The coupon is not redeemed when ordering and remains for the next order
+2.There may be a 0.01 chance that the order number of two people will be the same
+3.When updating the checkout page, an order may be accidentally placed
+
+Not a bug, but it should be noted:
+The payment on the page is not real
+When adding a new product to the db, it will have to be added manually to other db tables
