@@ -56,7 +56,7 @@ def product_detail(request, id):
 
 def send_email(user_email, message):
     sender = 'iaib.pizza@gmail.com'
-    password = 'fvociwuqyefbmulb'
+    password = 'HIDE'
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
